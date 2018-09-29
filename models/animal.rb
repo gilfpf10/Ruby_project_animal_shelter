@@ -7,10 +7,11 @@ class Animal
   def initialize(options)
     @id = options["id"].to_i if options['id']
     @name = options ["name"]
-    @admission = options ["admission_date"].to_i
+    @admission = options ["admission"].to_i
     @age = options ["age"].to_i
-    @availability = options ["availability"]
+    @availability = options ["availability"].to_i
     @type = options ["type"]
+  end
 
     def save()
 
@@ -21,19 +22,14 @@ class Animal
         age,
         availability,
         type
-        )
-        VALUES
-        ($1, $2, $3, $4, $5)
-        RETURNING *"
-        values = [@name, @admission, @age, @availability, @type]
-        results = Sqlrunner.run(sql, values)
-        @id = results_data.first() ["id"].to_i
-      end
-
-
-
-
-
+      )
+      VALUES
+      ($1, $2, $3, $4, $5)
+      RETURNING *"
+      values = [@name, @admission, @age, @availability, @type]
+      results = SqlRunner.run(sql, values)
+      @id = results.first() ["id"].to_i
+    end
 
 
 end

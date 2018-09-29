@@ -1,7 +1,7 @@
 require_relative('../db/sql_runner')
 
 
-class owner
+class Owner
 
   attr_reader( :name, :id)
 
