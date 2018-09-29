@@ -8,8 +8,8 @@ id SERIAL8 primary key,
 name VARCHAR(255),
 admission INT8,
 age INT8,
-availability VARCHAR (255),
-type VARCHAR (255)
+availability VARCHAR(255),
+type VARCHAR(255)
 );
 
 CREATE TABLE owners

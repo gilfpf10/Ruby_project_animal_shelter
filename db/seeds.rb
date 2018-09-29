@@ -7,7 +7,7 @@ require("pry-byebug")
 
 animal1 = Animal.new({
   "name" => "Kika",
-  "admission" => "2016-01-21",
+  "admission" => "2018",
   "age" => 2,
   "availability" => "available",
   "type" => "cat"
@@ -16,9 +16,9 @@ animal1.save()
 
 animal2= Animal.new({
   "name" => "Mitch",
-  "admission" => "2016-01-21",
+  "admission" => "2018",
   "age" => 4,
-  "availability" => "available",
+  "availability" => "trainning",
   "type" => "dog"
   })
 animal2.save()
