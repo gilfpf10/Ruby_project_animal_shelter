@@ -31,11 +31,3 @@ class Adoption
 
 
 end
-
-
-
-
-
-
-
-end
