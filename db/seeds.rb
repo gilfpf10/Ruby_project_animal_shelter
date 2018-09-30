@@ -3,13 +3,15 @@ require_relative( "../models/animal.rb" )
 require_relative( "../models/owner.rb" )
 require("pry-byebug")
 
-
+Adoption.delete_all()
+Animal.delete_all()
+Owner.delete_all()
 
 animal1 = Animal.new({
   "name" => "Kika",
   "admission" => "2018",
   "age" => 2,
-  "availability" => "available",
+  "availability" => "adopted",
   "type" => "cat"
 })
 animal1.save()
@@ -28,6 +30,12 @@ owner1= Owner.new({
 "name" => "Bob"
 })
 owner1.save()
+
+adoption1 = Adoption.new({
+  "animal_id" => animal1.id,
+  "owner_id" => owner1.id
+  })
+adoption1.save()
 
 
 binding.pry

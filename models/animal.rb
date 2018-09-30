@@ -32,10 +32,10 @@ class Animal
     @id = results.first() ["id"].to_i
   end
 
-  def self.all()
+  def self.find()
     sql = "SELECT * FROM animals"
     results = SqlRunner.run(sql)
-    return results.map {|hash| Animals.new(hash)}
+    return results.map {|animal| Animals.new(animal)}
   end
 
   def update()
@@ -51,8 +51,8 @@ class Animal
     SqlRunner.run(sql, values)
   end
 
-  def delete_all()
-    sql = "DELETE * FROM animals"
+  def self.delete_all()
+    sql = "DELETE FROM animals"
     SqlRunner.run (sql)
   end
 
