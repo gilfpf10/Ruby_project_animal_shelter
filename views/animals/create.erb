@@ -1,0 +1,12 @@
+require( 'sinatra' )
+require( 'sinatra/contrib/all' )
+require( 'pry-byebug' )
+require_relative("./models/pizza_order")
+also_reload("./models/*")
+
+
+post "/pizza-orders" do
+  @order = PizzaOrder.new(params)
+  @order.save()
+  erb(:show)
+end

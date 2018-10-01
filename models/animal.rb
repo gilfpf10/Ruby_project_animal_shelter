@@ -58,5 +58,48 @@ class Animal
     SqlRunner.run (sql)
   end
 
+  def self.find( id )
+    sql = "SELECT * FROM animals WHERE id = $1"
+    values =[id]
+    results = SqlRunner.run(sql, values)
+    return Animal.new(results.first)
+  end
 
-end
+  def ready_adoption()
+    sql = "SELECT * FROM animals
+    WHERE availability = 'ready'"
+    results = SqlRunner.run(sql, values)
+    return Animal.new(results.first)
+
+  end
+
+  def adopted()
+    sql = "SELECT * FROM animals
+    WHERE availability = 'adopted'"
+    results = SqlRunner.run(sql, values)
+    return Animal.new(results.first)
+  end
+
+  def trainning()
+    sql = "SELECT * FROM animals
+    WHERE availability = 'trainning'"
+    results = SqlRunner.run(sql, values)
+    return Animal.new(results.first)
+  end
+
+  def vetcare()
+    sql = "SELECT * FROM animals
+    WHERE availability = 'vetcare'"
+    results = SqlRunner.run(sql, values)
+    return Animal.new(results.first)
+  end
+
+  def type()
+    sql = "SELECT * FROM animals
+    WHERE type = '$1'"
+    values = [type]
+    results = SqlRunner.run(sql, values)
+    return Animal.new(results.first)
+  end
+
+  end
