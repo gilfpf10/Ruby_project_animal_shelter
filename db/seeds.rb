@@ -9,7 +9,7 @@ Owner.delete_all()
 
 animal1 = Animal.new({
   "name" => "Kika",
-  "admission" => "2018",
+  "admission" => '2018-01-01',
   "age" => 2,
   "availability" => "adopted",
   "type" => "cat"
@@ -18,7 +18,7 @@ animal1.save()
 
 animal2= Animal.new({
   "name" => "Mitch",
-  "admission" => "2018",
+  "admission" => '01-01-2018',
   "age" => 4,
   "availability" => "trainning",
   "type" => "dog"

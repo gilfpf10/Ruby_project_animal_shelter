@@ -8,7 +8,7 @@ class Animal
   def initialize(options)
     @id = options["id"].to_i if options['id']
     @name = options ["name"]
-    @admission = options ["admission"].to_i
+    @admission = options ["admission"]
     @age = options ["age"].to_i
     @availability = options ["availability"]
     @type = options ["type"]
@@ -32,11 +32,13 @@ class Animal
     @id = results.first() ["id"].to_i
   end
 
-  def self.find()
+
+  def self.all()
     sql = "SELECT * FROM animals"
     results = SqlRunner.run(sql)
-    return results.map {|animal| Animals.new(animal)}
+    return results.map {|animals| Animal.new(animals)}
   end
+
 
   def update()
     sql = "UPDATE animals SET (
@@ -55,5 +57,6 @@ class Animal
     sql = "DELETE FROM animals"
     SqlRunner.run (sql)
   end
+
 
 end

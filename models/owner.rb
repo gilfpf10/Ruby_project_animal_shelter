@@ -26,11 +26,11 @@ class Owner
     @id = results.first()['id'].to_i
  end
 
-def self.find
+def self.all()
 
   sql = "SELECT * FROM owners"
   results = SqlRunner.run(sql)
-  return results.map {|hash| Animals.new(hash)}
+  return results.map {|owners| Owner.new(owners)}
 
 end
 

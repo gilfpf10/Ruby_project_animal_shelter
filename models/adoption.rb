@@ -29,7 +29,7 @@ class Adoption
   def self.all()
     sql = "SELECT * FROM adoptions"
     results = SqlRunner.run( sql )
-    return results.map { |adoption| Adoption.new( adoption ) }
+    return results.map { |adoptions| Adoption.new(adoptions) }
   end
 
   def self.delete_all()
