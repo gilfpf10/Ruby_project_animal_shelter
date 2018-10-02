@@ -21,8 +21,15 @@ get "/animals/:id/edit" do
   erb("animal/edit")
 end
 
+post "/animals/:id" do
+  animal = Animal.new(params)
+  animal.update
+  redirect to "/animas/#{params ["id"]}"
+end
+
+
 get "/animals/ready" do
-  @animals = Animal.ready()
+  @animals = Animal.all()
   erb(:"animals/ready")
 end
 

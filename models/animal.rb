@@ -85,11 +85,10 @@ class Animal
 
   end
 
-  def adopted()
-    sql = "SELECT * FROM animals
-    WHERE availability = '$1'"
-    results = SqlRunner.run(sql, values)
-    return Animal.new(results.first)
+  def self.adopted()
+    sql = "SELECT * FROM animals"
+    results = SqlRunner.run(sql)
+    return results.map {|hash| Animal.new(hash)}
   end
 
 
