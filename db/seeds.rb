@@ -49,11 +49,18 @@ owner1= Owner.new({
 })
 owner1.save()
 
+owner2= Owner.new({
+"name" => "Bob"
+})
+owner2.save()
+
 adoption1 = Adoption.new({
   "animal_id" => animal1.id,
   "owner_id" => owner1.id
   })
 adoption1.save()
+
+
 
 
 binding.pry

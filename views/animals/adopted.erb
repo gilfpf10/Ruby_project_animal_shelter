@@ -1,40 +1,34 @@
-<a class= "btn btn--action" href="animals"></a>
-
-<h3> Adopted Animals </h3>
-
-<div class="form-container">
-  <form method="post" action="/animals/show">
-    <h1> Animals </h1>
+<table class="form-container">
+<form method="post" action= "/animals/show">
+<h2> Animals </h2>
 
 
-    <table frame="box">
-      <tr>
-        <th>Name</th>
-        <th></th>
-        <th>Admission</th>
-        <th></th>
-        <th>Age</th>
-        <th></th>
-        <th>Availability</th>
-        <th></th>
-        <th>Type</th>
-      </tr>
+
+<table frame="box">
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>Admission</th>
+    <th></th>
+    <th>Age</th>
+    <th></th>
+    <th>Availability</th>
+    <th></th>
+    <th>Type</th>
+  </tr>
 
 
-      <% for animal in @animals %>
-      <tr>
-        <td><a href="animals/<%= animal.id %>"><%= animal.name %></a></td>
-        <td></td>
-        <td><%= animal.admission %></td>
-        <td></td>
-        <td><%= animal.age %></td>
-        <td></td>
-        <td><%= animal.availability %></td>
-        <td></td>
-        <td><%= animal.type %></td>
-        <td></td>
-
-        <td><%= animal.is_available %></td>
-      </tr>
-      <% end %>
-    </table>
+<% for animal in @animals %>
+<td><a href="animals/<%= animal.id %>"><%= animal.name %></a></td>
+ <td></td>
+ <td></td>
+     <td><%= animal.admission %></td>
+     <td></td>
+     <td><%= animal.age %></td>
+     <td></td>
+     <td><%= animal.availability %></td>
+     <td></td>
+     <td><%= animal.type %></td>
+     <td></td>
+   </tr>
+   <% end %>

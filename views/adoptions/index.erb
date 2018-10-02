@@ -5,7 +5,7 @@
 <ol>
   <% for adoption in @adoptions%>
   <li>
-    <p>Animal <%= adoption.animal.name %> was adopted by <%adoption.owner.name %> </p>
+    <p>Animal <%= adoption.animal.name %> was adopted <%adoption.owner.name %> </p>
     <p>
       <form action= "/adoptions/<%= adoption.id %>/delete" method="post">
         <input class ="btn btn-primary" type="submit" value="delete"/>
