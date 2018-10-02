@@ -1,0 +1,41 @@
+<a class = "btn btn--action" href="/animals/ready"> Show ready to adopt </a>
+<br><br>
+<a class = "btn btn--action" href="/animals/adopted"> Show  adopted animals </a>
+<br><br>
+<a class = "btn btn--action" href="/animals/new"> Add a New Animal </a>
+<br><br>
+
+<table class="form-container">
+<form method="post" action= "/animals/show">
+<h2> Animals </h2>
+
+
+
+<table frame="box">
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>Admission</th>
+    <th></th>
+    <th>Age</th>
+    <th></th>
+    <th>Availability</th>
+    <th></th>
+    <th>Type</th>
+  </tr>
+
+
+<% for animal in @animals %>
+<td><a href="animals/<%= animal.id %>"><%= animal.name %></a></td>
+ <td></td>
+ <td></td>
+     <td><%= animal.admission %></td>
+     <td></td>
+     <td><%= animal.age %></td>
+     <td></td>
+     <td><%= animal.availability %></td>
+     <td></td>
+     <td><%= animal.type %></td>
+     <td></td>
+   </tr>
+   <% end %>

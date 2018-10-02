@@ -1,0 +1,16 @@
+<a class = "btn btn --action" href="/adoptions/new"> Add an Adoption</a>
+
+<h3>Adoptions</h3>
+
+<ol>
+  <% for adoption in @adoptions%>
+  <li>
+    <p>Animal <%= adoption.animal.name %> was adopted by <%adoption.owner.name %> </p>
+    <p>
+      <form action= "/adoptions/<%= adoption.id %>/delete" method="post">
+        <input class ="btn btn-primary" type="submit" value="delete"/>
+      </form>
+    </p>
+  </li>
+  <% end %>
+</ol>

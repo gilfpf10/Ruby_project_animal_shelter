@@ -1,0 +1,16 @@
+<a class= "btn btn -- action" href="owner/new">Add Owner</a>
+
+<h3> Owners </h3>
+
+<table frame="box">
+  <tr>
+    <th> Owner </th>
+    <th>Name</th>
+
+    <tr/>
+    <% for owner in @owners %>
+    <tr>
+      <td><%= owner.id %></td><td><%= owner.name %></td>
+    </tr>
+    <% end %>
+  </table>

@@ -53,9 +53,21 @@ class Animal
     SqlRunner.run(sql, values)
   end
 
+  def self.all()
+    sql = "SELECT * FROM animals"
+    results = SqlRunner.run(sql)
+    return results.map {|hash| Animal.new(hash)}
+  end
+
   def self.delete_all()
     sql = "DELETE FROM animals"
     SqlRunner.run (sql)
+  end
+
+  def delete()
+    sql = "DELETE from animals WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
   end
 
   def self.find( id )
@@ -65,41 +77,20 @@ class Animal
     return Animal.new(results.first)
   end
 
-  def ready_adoption()
+  def ready()
     sql = "SELECT * FROM animals
-    WHERE availability = 'ready'"
-    results = SqlRunner.run(sql, values)
+    WHERE availability = '$1'"
+    results = SqlRunner.run(sql)
     return Animal.new(results.first)
 
   end
 
   def adopted()
     sql = "SELECT * FROM animals
-    WHERE availability = 'adopted'"
+    WHERE availability = '$1'"
     results = SqlRunner.run(sql, values)
     return Animal.new(results.first)
   end
 
-  def trainning()
-    sql = "SELECT * FROM animals
-    WHERE availability = 'trainning'"
-    results = SqlRunner.run(sql, values)
-    return Animal.new(results.first)
-  end
 
-  def vetcare()
-    sql = "SELECT * FROM animals
-    WHERE availability = 'vetcare'"
-    results = SqlRunner.run(sql, values)
-    return Animal.new(results.first)
-  end
-
-  def type()
-    sql = "SELECT * FROM animals
-    WHERE type = '$1'"
-    values = [type]
-    results = SqlRunner.run(sql, values)
-    return Animal.new(results.first)
-  end
-
-  end
+end
