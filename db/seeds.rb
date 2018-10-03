@@ -50,7 +50,7 @@ owner1= Owner.new({
 owner1.save()
 
 owner2= Owner.new({
-"name" => "Bob"
+"name" => "Frank"
 })
 owner2.save()
 

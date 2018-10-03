@@ -18,13 +18,13 @@ end
 
 get "/animals/:id/edit" do
   @animal = Animal.find (params["id"].to_i)
-  erb("animal/edit")
+  erb(:"animal/edit")
 end
 
 post "/animals/:id" do
   animal = Animal.new(params)
   animal.update
-  redirect to "/animas/#{params ["id"]}"
+  redirect to :"/animas/#{params ["id"]}"
 end
 
 
@@ -39,15 +39,15 @@ get "/animals/adopted" do
   erb(:"animals/adopted")
 end
 
-post "/animals/new" do
+post "/animal/new" do
   new_animal = Animal.new(params)
   new_animal.save()
   redirect to(:"animals")
 end
 
 get '/animals/new' do
-@animals = Animal.all()
-erb(:"animals/new")
+  @animals = Animal.all()
+  erb(:"animals/new")
 end
 
 get "/animal/show" do

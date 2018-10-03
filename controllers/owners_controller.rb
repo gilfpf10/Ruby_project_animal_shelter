@@ -17,13 +17,13 @@ get "owners/:id" do
   erb(:"owners/show")
 end
 
-get "/owner/new" do
-  @animal = Animal.all
-  erb(:"owners/new")
-end
-
 post "/owner/new" do
   new_owner = Owner.new(params)
   new_owner.save()
-  redirect to ("/owners")
+  redirect to "/owners"
+end
+
+get "/owner/new" do
+  @owner = Owner.all
+  erb(:"owners/new")
 end
