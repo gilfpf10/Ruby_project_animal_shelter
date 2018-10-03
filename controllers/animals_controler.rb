@@ -29,22 +29,25 @@ end
 
 
 get "/animals/ready" do
-  @animals = Animal.all()
+  @animals = Animal.ready()
   erb(:"animals/ready")
 end
 
 
 get "/animals/adopted" do
-  @animals = Animal.all()
+  @animals = Animal.adopted()
   erb(:"animals/adopted")
 end
 
-
-
-post "/animal/new" do
+post "/animals/new" do
   new_animal = Animal.new(params)
   new_animal.save()
   redirect to(:"animals")
+end
+
+get '/animals/new' do
+@animals = Animal.all()
+erb(:"animals/new")
 end
 
 get "/animal/show" do

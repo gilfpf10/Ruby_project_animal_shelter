@@ -1,0 +1,86 @@
+#banner {
+  background-image: url('https://img.buzzfeed.com/buzzfeed-static/static/enhanced/webdr02/2013/4/29/14/enhanced-buzz-orig-14149-1367258753-6.jpg?downsize=715:*&output-format=auto&output-quality=auto');
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: 50% 5%;
+  height: 625px;
+  width: 98%;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+}
+
+#banner .content h1 {
+  border: 3px solid white;
+  position: relative;
+  top: 30px;
+  width: 500px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  color: white;
+  font-size: 42px;
+  font-weight: 600;
+  text-align: center;
+}
+
+h2 {
+  color: black;
+  font-size: 42px;
+  font-weight: 600;
+  text-align: left;
+}
+
+body {
+  justify-content: space_around;
+  background-size: 50%;
+  background-repeat: no-repeat;
+  padding-top:0px;
+  padding-right:0px;
+  padding-bottom: 10px;
+  padding-left: 0px;
+  font-family: 'Lato', sans-serif;
+}
+
+.profile-container {
+  color: #fff;
+  background-color: #4ea1d3;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.profile {
+  border: 1px solid #fff;
+  width: 900px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-container {
+  color: #fff;
+  background-color: #4ea1d3;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.nav {
+  border: 1px solid #fff;
+  width: 900px;
+  display: flex;
+  justify-content: space-around;
+}
+
+img {
+    border-radius: 60%;
+}
+
+.image-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
