@@ -1,18 +1,14 @@
 <div class="profile-container">
   <div class = "profile">
 
-    <h1> Animal <% @animal.name %></h1>
+    <h1> Animal <%= @animal.name %></h1>
 
-    <p> Admission: <% @animal.admission %></p>
-    <p> Age <% @animal.age %></p>
-    <p> Availability <% @animal.availability %></p>
-    <p> Type <% @animal.type %></p>
-    <a href= "/animals/<%= @animal.id %>/edit"Edit</a>
+    <p> Admission: <%= @animal.admission %></p>
+    <p> Age <%= @animal.age %></p>
+    <p> Availability <%= @animal.availability %></p>
+    <p> Type <%= @animal.type %></p>
+    <a href= "/animals/<%= @animal.id %>/edit"> Edit</a>
     <form action = "/animal/ <%= @animal.id %>/delete" method ="post"><input type="submit" value="Delete"></form>
 
   </div>
-</div>
-
-  <div class= "image-container">
-  <img src="/Users/user/Documents/codeclan_work/week_4/project_animal_shelter/public/images/cat.jpg" align="middle">
 </div>

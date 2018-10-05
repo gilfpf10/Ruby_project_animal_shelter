@@ -19,6 +19,7 @@
 
 
 <% for animal in @animals %>
+<tr>
 <td><a href="animals/<%= animal.id %>"><%= animal.name %></a></td>
  <td></td>
  <td></td>
@@ -32,3 +33,4 @@
      <td></td>
    </tr>
    <% end %>
+</table>

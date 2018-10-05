@@ -13,7 +13,7 @@ end
 
 get '/adoptions/new' do
   @owners = Owner.all
-  @animals = Animal.all
+  @animals = Animal.ready
   erb(:"adoptions/new")
 end
 

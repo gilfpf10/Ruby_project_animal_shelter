@@ -11,22 +11,6 @@ get '/animals' do
   erb(:"animals/index")
 end
 
-get"animals/:id" do
-  @animals = Animal.find(params["id"].to_i)
-  erb(:"animals/show")
-end
-
-get "/animals/:id/edit" do
-  @animal = Animal.find (params["id"].to_i)
-  erb(:"animal/edit")
-end
-
-post "/animals/:id" do
-  animal = Animal.new(params)
-  animal.update
-  redirect to :"/animas/#{params ["id"]}"
-end
-
 
 get "/animals/ready" do
   @animals = Animal.ready()
@@ -53,4 +37,20 @@ end
 get "/animal/show" do
   @animals = Animal.all()
   erb(:"animals/index")
+end
+
+get "/animals/:id" do
+  @animal = Animal.find(params["id"].to_i)
+  erb(:"animals/show")
+end
+
+get "/animals/:id/edit" do
+  @animal = Animal.find (params["id"].to_i)
+  erb(:"animals/edit")
+end
+
+post "/animals/:id" do
+  animal = Animal.find(params["id"])
+  animal.update
+  redirect to "/animals/#{params["id"]}"
 end

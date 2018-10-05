@@ -47,8 +47,9 @@ class Animal
     age,
     availability,
     type
-    )= $1, $2, $3, $4)
-    WHERE id =$5"
+    )=
+    ($1, $2, $3, $4, $5)
+    WHERE id =$6"
     values = [@name, @admission, @age, @availability,@type, @id]
     SqlRunner.run(sql, values)
   end
@@ -74,7 +75,7 @@ class Animal
     sql = "SELECT * FROM animals WHERE id = $1"
     values =[id]
     results = SqlRunner.run(sql, values)
-    return results.map {|hash| Animal.new(hash)}
+    return Animal.new(results.first)
   end
 
   def self.ready()
